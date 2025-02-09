@@ -1,7 +1,9 @@
 import React from "react";
 import "./ComponentStyles/About.css";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <div className="about-container">
       <section id="about" className="about-section">
@@ -12,6 +14,15 @@ const About = () => {
           staff are committed to using the latest technology and techniques to
           ensure the best possible outcomes for our patients.
         </p>
+
+        <button
+          className="home-button"
+          onClick={() => {
+            navigate("/services");
+          }}
+        >
+          Our Services
+        </button>
       </section>
     </div>
   );

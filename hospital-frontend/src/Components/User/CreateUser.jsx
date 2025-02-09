@@ -6,6 +6,7 @@ import PhoneInput from "react-phone-number-input";
 const CreateUser = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("male");
   const [address, setAddress] = useState("");
@@ -28,6 +29,16 @@ const CreateUser = () => {
             id="fullName"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="age">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
