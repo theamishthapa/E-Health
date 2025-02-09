@@ -8,7 +8,9 @@ const Home = () => {
     <div className="home-container">
       <div className="overlay"></div>
       <section id="home" className="home-section">
-        <h1 className="home-title">Welcome to eHealth</h1>
+        <h1 className="home-title">
+          Welcome to <span className="eHealth">eHealth</span>
+        </h1>
         <p className="home-text">
           Your health, our priority. Experience seamless online consultations
           and easy hospital bookings from the comfort of your home.

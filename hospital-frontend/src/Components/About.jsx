@@ -14,6 +14,12 @@ const About = () => {
           staff are committed to using the latest technology and techniques to
           ensure the best possible outcomes for our patients.
         </p>
+        <p className="about-text">
+          With years of experience and cutting-edge technology, we strive to
+          restore and enhance vision, ensuring a brighter future for all. Our
+          compassionate team is here to guide you on your journey to healthier
+          eyes.
+        </p>
 
         <button
           className="home-button"

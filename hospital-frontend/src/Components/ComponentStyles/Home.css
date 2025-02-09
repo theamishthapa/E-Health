@@ -1,3 +1,7 @@
+* {
+  padding: 0;
+  margin: 0;
+}
 .home-container {
   position: relative;
   display: flex;
@@ -30,6 +34,10 @@
   font-weight: bold;
   margin-bottom: 15px;
   animation: fadeIn 1.5s ease-in-out;
+}
+
+.eHealth {
+  color: #00c3e3;
 }
 
 .home-text,

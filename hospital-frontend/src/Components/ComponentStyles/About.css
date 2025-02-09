@@ -1,32 +1,74 @@
+/* About.css */
 .about-container {
+  position: relative;
+  min-height: 100vh;
+  background: url("https://images.pexels.com/photos/776635/pexels-photo-776635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+    no-repeat center center/cover; /* Add your background image URL */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-  animation: fadeIn 1s ease-in-out; /* Apply animation */
+  color: white; /* Text color */
 }
 
 .about-section {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  padding: 40px;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
-  max-width: 600px;
+  animation: fadeIn 1s ease-in-out; /* Apply animation */
 }
 
 .about-title {
-  font-size: 24px;
-  color: #007bff;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #00c3e3;
 }
 
 .about-text {
-  font-size: 16px;
-  color: #333;
+  font-size: 1.1rem;
   line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.home-button {
+  background-color: #00c3e3;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.home-button:hover {
+  background-color: #009bb0;
+  transform: translateY(-3px);
+}
+
+.home-button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .home-button {
+    font-size: 1rem;
+  }
 }
 
 /* animations */
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
