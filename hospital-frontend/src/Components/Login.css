@@ -1,53 +1,121 @@
+/* Full-page centering */
 .login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  margin: 50px auto;
-  max-width: 1200px;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  background: linear-gradient(135deg, #e1eaf5, #e3e4e6);
+  animation: fadeIn 1s ease-in-out; /* Apply animation */
 }
 
+/* Title styling */
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: #007bff;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
+/* Flex container for cards */
 .login-cards {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
+  flex-wrap: wrap; /* Makes it responsive */
+  animation: fadeIn 2s ease-in-out;
 }
 
+/* Individual card styles */
 .login-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 8px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  text-align: center;
 }
 
 .login-card:hover {
-  background: #007bff;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* User card hover effect */
+.login-card:hover {
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
 }
 
+/* Admin-specific styles */
 .admin {
-  background: #ffecec;
+  background: rgba(255, 0, 0, 0.1);
 }
 
 .admin:hover {
-  background: #dc3545;
+  background: linear-gradient(135deg, #dc3545, #a71d2a);
   color: white;
 }
 
+/* Icon styling */
 .login-icon {
-  font-size: 30px;
-  margin-bottom: 10px;
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.login-card:hover .login-icon {
+  color: white;
+}
+
+/* Admin Icon Color */
+.admin .login-icon {
+  color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,71 +1,135 @@
+/* Centered container with shadow effect */
 .create-user-container {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 380px; /* Reduced width for a smaller card */
+  margin: 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
+  transition: 0.3s ease-in-out;
 }
 
+.create-user-container:hover {
+  transform: scale(1.02);
+}
+
+/* Form Title */
 h2 {
   color: #007bff;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
+/* Form layout */
 .create-user-form {
   display: flex;
   flex-direction: column;
 }
 
+/* Input Group */
 .form-group {
   margin-bottom: 15px;
   text-align: left;
 }
 
 label {
-  font-weight: bold;
+  font-weight: 600;
   display: block;
   margin-bottom: 5px;
+  color: #000000; /* Label color same as heading */
 }
 
+/* Improved input styling */
 input {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 14px;
 }
 
+input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Gender selection layout */
 .gender-options {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 5px 0;
 }
 
 .gender-label {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-weight: normal;
+  gap: 6px;
+  font-weight: 500;
+  color: #000000; /* Label color same as heading */
 }
 
 .gender-label input {
   width: auto;
 }
 
+/* Phone Input Styling */
+.PhoneInput {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 2px solid #ddd;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.PhoneInput input {
+  flex: 1;
+  border: none;
+  font-size: 14px;
+}
+
+.PhoneInput:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
 .submit-button {
   width: 100%;
   padding: 10px;
-  background: #007bff;
+  background: linear-gradient(135deg, #007bff, #004494);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: bold;
   transition: 0.3s;
 }
 
 .submit-button:hover {
-  background: #0056b3;
+  background: linear-gradient(135deg, #0056b3, #00357a);
+  transform: scale(1.04);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .create-user-container {
+    max-width: 320px; /* Slightly smaller on mobile */
+    padding: 20px;
+  }
+
+  input {
+    font-size: 13px;
+  }
+
+  .submit-button {
+    font-size: 13px;
+    padding: 9px;
+  }
 }

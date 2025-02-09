@@ -1,6 +1,6 @@
 import React from "react";
 import { FaEye, FaHeartbeat, FaUserMd, FaBrain, FaXRay } from "react-icons/fa";
-import "../Services.css";
+import "./ComponentStyles/Services.css";
 
 const servicesData = [
   {

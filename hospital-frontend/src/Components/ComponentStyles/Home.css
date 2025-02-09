@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.home-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: url("https://images.pexels.com/photos/48604/pexels-photo-48604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+    no-repeat center center/cover;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.home-section {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.home-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.eHealth {
+  color: #00c3e3;
+}
+
+.home-text,
+.home-subtext {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.home-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
