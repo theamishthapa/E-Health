@@ -2,9 +2,11 @@ import { Router } from "express";
 import {
   createUserController,
   deleteUserController,
+  login,
   readAllUserController,
   readSpecificUserController,
   UpdateUserController,
+  verifyEmail,
 } from "../controller/userController.js";
 
 let userRouter = Router();
@@ -17,4 +19,6 @@ userRouter
   .patch(UpdateUserController)
   .delete(deleteUserController);
 
+userRouter.route("/verify-email").post(verifyEmail);
+userRouter.route("/login").post(login);
 export default userRouter;

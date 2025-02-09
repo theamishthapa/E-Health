@@ -55,6 +55,37 @@ export const createUserController = async (req, res, next) => {
   }
 };
 
+//email verify
+export const verifyEmail = async (req, res, next) => {
+  try {
+    let tokenString = req.headers.authorization;
+    let tokenArray = tokenString.split(" ");
+    let token = tokenArray[1];
+
+    // console.log(token);
+
+    let secretkey = process.env.SECRET_KEY;
+
+    let infoObj = await jwt.verify(token, secretkey);
+
+    // console.log(infoObj);
+
+    let result = await HospitalUser.findByIdAndUpdate(infoObj._id, {
+      isVerifiedEmail: true,
+    });
+    res.status(200).json({
+      success: true,
+      message: "Email verified successfully",
+      result: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: ("Failed to verify email", error.message),
+    });
+  }
+};
+
 //Read all
 export const readAllUserController = async (req, res, next) => {
   try {
@@ -121,6 +152,52 @@ export const deleteUserController = async (req, res, next) => {
     res.status(400).json({
       success: false,
       message: ("Failed to delete", error.message),
+    });
+  }
+};
+
+//login part
+export const login = async (req, res, next) => {
+  try {
+    let email = req.body.email;
+    let password = req.body.password;
+
+    let user = await HospitalUser.findOne({ email });
+
+    if (!user) {
+      throw new Error("Invalid Credentials");
+    }
+
+    if (!user.isVerifiedEmail) {
+      throw new Error("Email not verified");
+    }
+
+    let isValidPassword = await bcrypt.compare(password, user.password);
+
+    if (!isValidPassword) {
+      throw new Error("Invalid Credentials");
+    }
+
+    let infoObj = {
+      _id: user._id,
+    };
+    let secretkey = process.env.SECRET_KEY;
+
+    let expiryInfo = {
+      expiresIn: "365d",
+    };
+    let token = await jwt.sign(infoObj, secretkey, expiryInfo);
+
+    res.status(200).json({
+      success: true,
+      message: "Login successfully",
+      result: user,
+      token: token,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: ("Failed to login", error.message),
     });
   }
 };
