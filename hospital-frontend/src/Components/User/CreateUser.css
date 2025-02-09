@@ -24,7 +24,7 @@ h2 {
 }
 
 label {
-  font-weight: bold;
+  font-weight: normal;
   display: block;
   margin-bottom: 5px;
 }
@@ -47,7 +47,7 @@ input {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .gender-label input {
@@ -62,7 +62,7 @@ input {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 13px;
   transition: 0.3s;
 }
 
