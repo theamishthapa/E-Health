@@ -38,7 +38,7 @@ export const createUserController = async (req, res, next) => {
       <h1>Thank you for registering on our hospital</h1>
       <p>To verify your email click the link below:</p>
       </br>
-      <a href="http://localhost:3000/verify-email?token=${token}">http://localhost:3000/verify-email?token=${token}</a>
+      <a href="http://localhost:5173/verify-email?token=${token}">http://localhost:5173/verify-email?token=${token}</a>
       `,
     });
 

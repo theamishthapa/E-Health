@@ -2,13 +2,16 @@ import express from "express";
 import connectDB from "./src/connectDB/connectDB.js";
 import userRouter from "./src/routes/userRouter.js";
 import { config } from "dotenv";
+import cors from "cors";
 
 config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT; // Change 5000 to your desired port
 
 connectDB();
+
+app.use(cors());
 
 app.use(express.json());
 

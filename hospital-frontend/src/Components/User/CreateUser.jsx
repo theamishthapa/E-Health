@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./CreateUser.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import axios from "axios";
 
 const CreateUser = () => {
   const [fullName, setFullName] = useState("");
@@ -18,10 +19,44 @@ const CreateUser = () => {
     { label: "Others", value: "others" },
   ];
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let data = {
+      fullName: fullName,
+      email: email,
+      password: password,
+      age: age,
+      gender: gender,
+      address: address,
+      phoneNumber: phoneNumber,
+    };
+    data = { ...data, role: "User" };
+
+    try {
+      let result = await axios({
+        url: `http://localhost:5000/hospital-user`,
+        method: "POST",
+        data: data,
+      });
+
+      setFullName("");
+      setEmail("");
+      setPassword("");
+      setAge("");
+      setGender("");
+      setAddress("");
+      phoneNumber("");
+      console.log(result);
+    } catch (error) {
+      console.log("failed to create user", error);
+    }
+  };
+
   return (
     <div className="create-user-container">
       <h2>Create Your Account</h2>
-      <form className="create-user-form">
+      <form className="create-user-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="fullName">Full Name:</label>
           <input
