@@ -28,6 +28,8 @@
   font-weight: 500;
   color: #333;
   transition: 0.3s;
+  display: flex;
+  align-items: center; /* Align text vertically */
 }
 
 .nav-link:hover {
@@ -38,4 +40,29 @@
   color: #007bff;
   font-weight: bold;
   border-bottom: 2px solid #007bff;
+}
+
+.logout-btn {
+  background-color: transparent; /* Transparent background */
+  color: #333; /* Matching text color with other nav links */
+  font-size: 16px; /* Matching font size */
+  font-weight: 500; /* Matching font weight */
+  padding: 8px 16px; /* Consistent padding */
+  border: none;
+  border-radius: 5px; /* Slightly rounded edges */
+  transition: color 0.3s, transform 0.2s; /* Smooth transitions */
+  cursor: pointer;
+  text-decoration: none; /* Remove any underline */
+  display: flex;
+  align-items: center; /* Align text vertically with other links */
+}
+
+.logout-btn:hover {
+  color: #007bff; /* Hover effect matching other nav links */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.logout-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Focus effect matching the active link */
 }
