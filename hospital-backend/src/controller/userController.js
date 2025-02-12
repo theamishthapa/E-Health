@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import { HospitalUser } from "../schema/userSchema.js";
 import jwt from "jsonwebtoken";
-import { sendEmail } from "../utilis/sendMail.js";
+import { sendEmail } from "../utils/sendMail.js";
 
 //register
 export const createUserController = async (req, res, next) => {
@@ -198,6 +198,26 @@ export const login = async (req, res, next) => {
     res.status(400).json({
       success: false,
       message: ("Failed to login", error.message),
+    });
+  }
+};
+
+//my profile part
+//isauthentication bata token pathauney
+
+export const userProfile = async (req, res, next) => {
+  try {
+    let _id = req._id;
+    let result = await HospitalUser.findById(_id);
+    res.status(200).json({
+      success: true,
+      message: "Profile Read successfully",
+      result: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: ("User not Authorized to read profile", error.message),
     });
   }
 };
