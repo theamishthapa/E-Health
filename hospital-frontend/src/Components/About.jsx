@@ -9,17 +9,19 @@ const About = () => {
       <section id="about" className="about-section">
         <h2 className="about-title">About Us</h2>
         <p className="about-text">
-          EyeCare Hospital is dedicated to providing the highest quality eye
-          care to our patients. Our team of experienced ophthalmologists and
-          staff are committed to using the latest technology and techniques to
-          ensure the best possible outcomes for our patients.
+          eHealth is a revolutionary platform designed to streamline the process
+          of booking appointments and scheduling online consultations in
+          governmental hospitals. Our mission is to improve the healthcare
+          experience by providing patients with easy access to vital medical
+          services, ensuring a seamless and efficient journey from appointment
+          booking to virtual consultations. We understand that navigating the
+          healthcare system can be complex and time-consuming, which is why
+          eHealth was created. By partnering with governmental hospitals, we
+          simplify the process, enabling patients to book appointments online,
+          check availability, and consult with healthcare professionals from the
+          comfort of their homes.
         </p>
-        <p className="about-text">
-          With years of experience and cutting-edge technology, we strive to
-          restore and enhance vision, ensuring a brighter future for all. Our
-          compassionate team is here to guide you on your journey to healthier
-          eyes.
-        </p>
+        <p className="about-text">Learn about our services!</p>
 
         <button
           className="home-button"

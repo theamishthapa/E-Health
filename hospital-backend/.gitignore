@@ -1,4 +1,4 @@
 node_modules
-src/utilis/sendMail.js
+src/utils/sendMail.js
 .env
 

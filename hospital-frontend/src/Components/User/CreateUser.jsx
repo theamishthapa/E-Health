@@ -3,6 +3,7 @@ import "./CreateUser.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const CreateUser = () => {
   const [fullName, setFullName] = useState("");
@@ -40,6 +41,8 @@ const CreateUser = () => {
         data: data,
       });
 
+      toast.success("Email verification link has been sent. Check email");
+
       setFullName("");
       setEmail("");
       setPassword("");
@@ -50,11 +53,13 @@ const CreateUser = () => {
       console.log(result);
     } catch (error) {
       console.log("failed to create user", error);
+      toast.warn(error.result.data.message);
     }
   };
 
   return (
     <div className="create-user-container">
+      <ToastContainer />
       <h2>Create Your Account</h2>
       <form className="create-user-form" onSubmit={handleSubmit}>
         <div className="form-group">
