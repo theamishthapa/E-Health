@@ -5,7 +5,9 @@ import {
   login,
   readAllUserController,
   readSpecificUserController,
+  updatePassword,
   UpdateUserController,
+  updateUserProfile,
   userProfile,
   verifyEmail,
 } from "../controller/userController.js";
@@ -18,6 +20,11 @@ userRouter.route("/").post(createUserController).get(readAllUserController);
 userRouter.route("/verify-email").post(verifyEmail);
 userRouter.route("/login").post(login);
 userRouter.route("/user-profile").get(isAuthenticated, userProfile);
+userRouter
+  .route("/update-userprofile")
+  .patch(isAuthenticated, updateUserProfile);
+
+userRouter.route("/update-password").patch(isAuthenticated, updatePassword);
 
 userRouter
   .route("/:id")

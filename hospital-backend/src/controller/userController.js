@@ -221,3 +221,61 @@ export const userProfile = async (req, res, next) => {
     });
   }
 };
+
+//update-profile
+
+export const updateUserProfile = async (req, res, next) => {
+  try {
+    let _id = req._id;
+    let data = req.body;
+    delete data.email;
+    delete data.password;
+
+    let result = await HospitalUser.findByIdAndUpdate(_id, data, { new: true });
+
+    res.status(200).json({
+      success: true,
+      message: "Updated account successfully",
+      result: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: ("Failed to update", error.message),
+    });
+  }
+};
+
+//update-password
+
+export const updatePassword = async (req, res, next) => {
+  try {
+    let _id = req._id;
+    let oldPassword = req.body.oldPassword;
+    let newPassword = req.body.newPassword;
+
+    let data = await HospitalUser.findById(_id);
+
+    let isValidPassword = bcrypt.compare(oldPassword, data.password);
+
+    if (isValidPassword) {
+      let hashedPassword = await bcrypt.hash(newPassword, 10);
+
+      let result = await HospitalUser.findByIdAndUpdate(
+        _id,
+        { password: hashedPassword },
+        { new: true }
+      );
+      res.status(200).json({
+        success: true,
+        message: "Updated password successfully",
+        result: result,
+      });
+    }
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: ("failed to update", error.message),
+    });
+  }
+};
