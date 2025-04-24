@@ -1,0 +1,89 @@
+.eye-exam-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  margin-top: 5px;
+}
+
+.eye-exam-title {
+  font-size: 28px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.eye-exam-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.hospitals-title {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.hospitals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hospital-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hospital-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hospital-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.hospital-location,
+.hospital-contact {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.book-now-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

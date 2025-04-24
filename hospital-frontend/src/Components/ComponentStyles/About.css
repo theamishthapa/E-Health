@@ -2,7 +2,7 @@
 .about-container {
   position: relative;
   min-height: 100vh;
-  background: url("https://images.pexels.com/photos/776635/pexels-photo-776635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+  background: url("https://images.pexels.com/photos/970629/pexels-photo-970629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
     no-repeat center center/cover; /* Add your background image URL */
   display: flex;
   justify-content: center;
@@ -11,7 +11,7 @@
 }
 
 .about-section {
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
   padding: 40px;
   max-width: 800px;
   border-radius: 10px;

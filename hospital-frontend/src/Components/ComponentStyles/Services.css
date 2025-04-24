@@ -1,30 +1,35 @@
+/* General Container Styling */
 .services-container {
   text-align: center;
-  padding: 40px 20px;
+  padding: 50px 20px;
   background-color: #f8f9fa;
-  animation: fadeIn 1s ease-in-out; /* Apply animation */
+  animation: fadeIn 1s ease-in-out;
 }
 
+/* Section Title */
 .services-title {
-  font-size: 28px;
+  font-size: 30px;
   color: #007bff;
-  margin-bottom: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
 
+/* Services Grid */
 .services-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
+/* Service Card */
 .service-card {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  padding: 25px;
   text-align: center;
-  width: 300px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,43 +37,56 @@
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-7px);
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Service Icon */
 .service-icon {
-  font-size: 40px;
+  font-size: 42px;
   color: #007bff;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
+/* Service Title */
 .service-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
 }
 
+/* Service Description */
 .service-description {
   font-size: 16px;
-  color: #555;
+  color: #666;
+  line-height: 1.6;
 }
+
+/* Book Appointment Button */
 button {
-  background-color: #007bff; /* Dark red shade */
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 16px;
-  border-radius: 5px;
+  font-weight: 500;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
 }
 
 button:hover {
-  background-color: #82101c; /* Slightly lighter red on hover */
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
-/* animations */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
