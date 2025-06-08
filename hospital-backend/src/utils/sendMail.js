@@ -2,6 +2,8 @@
 import nodemailer from "nodemailer";
 import { config } from "dotenv";
 
+config();
+
 //the main thing in this file is transporterInfo and mailInfo
 const transporterInfo = {
   host: process.env.EMAIL_HOST,
